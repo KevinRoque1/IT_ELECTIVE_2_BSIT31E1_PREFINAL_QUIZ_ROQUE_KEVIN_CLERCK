@@ -1,0 +1,39 @@
+﻿@model MyPortfolio.Models.Project
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<a asp-controller="Home" asp-action="Index">&larr; Back to portfolio</a>
+
+<h1>@Model.Title</h1>
+<img src="@Model.ThumbnailPath" style="max-width:500px" alt="@Model.Title" />
+<p>@Model.Description</p>
+<a href="@Model.GitHubUrl" target="_blank" class="btn btn-outline-dark">View on GitHub</a>
+
+<hr />
+<h3>Comments</h3>
+
+@if (User.Identity?.IsAuthenticated == true)
+{
+    <form asp-controller="Projects" asp-action="AddComment" method="post">
+        <input type="hidden" name="projectId" value="@Model.Id" />
+        <input name="author" placeholder="Your name" class="form-control mb-2" />
+        <textarea name="text" placeholder="Add a comment..." class="form-control mb-2" required></textarea>
+        @Html.AntiForgeryToken()
+        <button type="submit" class="btn btn-success">Post Comment</button>
+    </form>
+}
+else
+{
+    <p><a asp-controller="Account" asp-action="Login">Log in</a> to leave a comment.</p>
+}
+
+<ul class="list-group mt-3">
+    @foreach (var c in Model.Comments.OrderByDescending(c => c.CreatedAt))
+    {
+        <li class="list-group-item">
+            <strong>@c.Author</strong> — @c.CreatedAt.ToString("g")
+            <p>@c.Text</p>
+        </li>
+    }
+</ul>
