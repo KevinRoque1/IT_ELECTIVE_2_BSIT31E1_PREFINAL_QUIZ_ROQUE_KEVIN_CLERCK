@@ -1,14 +1,16 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MyPortfolio.Models;
 using System.Security.Claims;
 
 namespace MyPortfolio.Controllers
 {
+    [AllowAnonymous]
     public class AccountController : Controller
     {
-       
+
         private const string ValidUsername = "admin";
         private const string ValidPassword = "Portfolio!2024";
 
