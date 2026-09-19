@@ -1,33 +1,33 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+    color: var(--bs-secondary-color);
+    text-align: end;
 }
 
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+    text-align: start;
 }
 
 .footer {
@@ -172,6 +172,7 @@ body {
         .btn-hire:hover::after {
             transform: scale(1);
         }
+
 .hero-socials a {
     color: #fff;
     font-size: 1.25rem;
@@ -213,10 +214,6 @@ body {
 }
 
 /* Keep card text readable on the dark Portfolio page */
-.hero-portfolio .card {
-    color: #212529;
-}
-
 .hero-portfolio ul li a {
     color: #f5852f;
 }
@@ -224,3 +221,93 @@ body {
     .hero-portfolio ul li a:hover {
         color: #d96f1f;
     }
+
+/* Dark panels + yellow buttons for the Portfolio project cards */
+.hero-portfolio .card {
+    background-color: #1c1e24;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+}
+
+.hero-portfolio .card-title,
+.hero-portfolio .card-text {
+    color: #fff;
+}
+
+.hero-portfolio .card-body .btn {
+    background-color: #f5c518;
+    border-color: #f5c518;
+    color: #16181d;
+    font-weight: 600;
+}
+
+    .hero-portfolio .card-body .btn:hover,
+    .hero-portfolio .card-body .btn:focus {
+        background-color: #d9ac0b;
+        border-color: #d9ac0b;
+        color: #16181d;
+    }
+
+/* Project Details page: black + yellow, dark mode */
+.hero-details {
+    color: #fff;
+}
+
+    .hero-details h1,
+    .hero-details h3 {
+        color: #fff;
+    }
+
+    .hero-details a {
+        color: #f5c518;
+    }
+
+        .hero-details a:hover {
+            color: #d9ac0b;
+        }
+
+    .hero-details .btn {
+        background-color: #f5c518;
+        border: 1px solid #f5c518;
+        color: #16181d;
+        font-weight: 600;
+    }
+
+        .hero-details .btn:hover,
+        .hero-details .btn:focus {
+            background-color: #d9ac0b;
+            border-color: #d9ac0b;
+            color: #16181d;
+        }
+
+    .hero-details hr {
+        border-color: rgba(255,255,255,0.15);
+    }
+
+    .hero-details .form-control {
+        background-color: #1c1e24;
+        border: 1px solid rgba(255,255,255,0.15);
+        color: #fff;
+    }
+
+        .hero-details .form-control::placeholder {
+            color: #9298a5;
+        }
+
+        .hero-details .form-control:focus {
+            background-color: #1c1e24;
+            border-color: #f5c518;
+            color: #fff;
+            box-shadow: 0 0 0 0.2rem rgba(245,197,24,0.25);
+        }
+
+    .hero-details .list-group-item {
+        background-color: #1c1e24;
+        border: 1px solid rgba(255,255,255,0.08);
+        color: #fff;
+    }
+
+        .hero-details .list-group-item strong {
+            color: #f5c518;
+        }
