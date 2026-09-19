@@ -150,30 +150,28 @@ body {
     position: relative;
     overflow: hidden;
     z-index: 1;
-    transition: none;
+    transition: background-color 0.3s ease;
 }
 
     .btn-hire::after {
         content: "";
         position: absolute;
-        inset: -1px;
+        inset: 0;
         background-color: #373c49;
         z-index: -1;
-        transform-origin: center;
         transform: scale(0);
-        border-radius: inherit;
+        transform-origin: center;
         transition: transform 0.3s ease;
     }
 
     .btn-hire:hover {
-        background-color: #f5852f;
+        background-color: #373c49;
         color: #fff;
     }
 
         .btn-hire:hover::after {
-            transform: scale(1.05);
+            transform: scale(1);
         }
-
 .hero-socials a {
     color: #fff;
     font-size: 1.25rem;
