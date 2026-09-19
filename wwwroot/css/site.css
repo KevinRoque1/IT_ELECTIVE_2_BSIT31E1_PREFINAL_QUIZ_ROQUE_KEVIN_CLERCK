@@ -73,6 +73,8 @@ body {
     background-color: #16181d;
     margin: 0;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .hero-nav {
@@ -91,6 +93,17 @@ body {
     margin: 0 auto;
     padding: 4rem 2rem;
     color: #fff;
+    flex: 1 0 auto;
+}
+
+/* Dark theme footer for hero pages */
+.hero-footer {
+    background-color: #16181d;
+    color: #c7c7c7;
+    text-align: center;
+    line-height: 60px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: auto;
 }
 
 .hero-text {
@@ -134,12 +147,32 @@ body {
     border: none;
     display: inline-block;
     margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: none;
 }
 
+    .btn-hire::after {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        background-color: #373c49;
+        z-index: -1;
+        transform-origin: center;
+        transform: scale(0);
+        border-radius: inherit;
+        transition: transform 0.3s ease;
+    }
+
     .btn-hire:hover {
-        background-color: #d96f1f;
+        background-color: #f5852f;
         color: #fff;
     }
+
+        .btn-hire:hover::after {
+            transform: scale(1.05);
+        }
 
 .hero-socials a {
     color: #fff;
