@@ -12,7 +12,7 @@ namespace MyPortfolio.Controllers
     {
 
         private const string ValidUsername = "admin";
-        private const string ValidPassword = "Portfolio!2024";
+        private const string ValidPassword = "123456";
 
         [HttpGet]
         public IActionResult Login() => View();

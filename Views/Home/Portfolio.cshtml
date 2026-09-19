@@ -1,0 +1,36 @@
+﻿@model List<MyPortfolio.Models.Project>
+@{
+    ViewData["Title"] = "Portfolio";
+    Layout = "_HeroLayout";
+}
+
+<div class="container py-5 hero-portfolio">
+    <h1 class="text-white">My Portfolio</h1>
+
+    <h3 class="text-white">Table of Contents</h3>
+    <ul>
+        @foreach (var p in Model)
+        {
+            <li><a href="#project-@p.Id">@p.Title</a></li>
+        }
+    </ul>
+
+    <div class="row">
+        @foreach (var p in Model)
+        {
+            <div class="col-md-4 mb-4 d-flex" id="project-@p.Id">
+                <div class="card h-100">
+                    <img src="@p.ThumbnailPath" class="card-img-top" alt="@p.Title thumbnail" />
+                    <div class="card-body">
+                        <h5 class="card-title">@p.Title</h5>
+                        <p class="card-text">@p.Description</p>
+                        <div class="d-grid gap-2">
+                            <a href="@p.GitHubUrl" target="_blank" class="btn btn-outline-dark">GitHub</a>
+                            <a asp-controller="Projects" asp-action="Details" asp-route-id="@p.Id" class="btn btn-primary">Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

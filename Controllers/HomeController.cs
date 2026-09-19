@@ -7,6 +7,11 @@ namespace MyPortfolio.Controllers
     {
         public IActionResult Index()
         {
+            return View();
+        }
+
+        public IActionResult Portfolio()
+        {
             return View(PortfolioData.Projects);
         }
     }

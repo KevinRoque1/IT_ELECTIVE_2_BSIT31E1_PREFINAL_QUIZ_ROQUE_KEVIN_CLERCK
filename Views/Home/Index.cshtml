@@ -1,31 +1,29 @@
-﻿@model List<MyPortfolio.Models.Project>
-@{
-    ViewData["Title"] = "My Portfolio";
+﻿@{
+    ViewData["Title"] = "Home";
+    Layout = "_HeroLayout";
 }
 
-<h1>My Portfolio</h1>
-
-<h3>Table of Contents</h3>
-<ul>
-    @foreach (var p in Model)
-    {
-        <li><a href="#project-@p.Id">@p.Title</a></li>
-    }
-</ul>
-
-<div class="row">
-    @foreach (var p in Model)
-    {
-        <div class="col-md-4 mb-4" id="project-@p.Id">
-            <div class="card">
-                <img src="@p.ThumbnailPath" class="card-img-top" alt="@p.Title thumbnail" />
-                <div class="card-body">
-                    <h5 class="card-title">@p.Title</h5>
-                    <p class="card-text">@p.Description</p>
-                    <a href="@p.GitHubUrl" target="_blank" class="btn btn-outline-dark">GitHub</a>
-                    <a asp-controller="Projects" asp-action="Details" asp-route-id="@p.Id" class="btn btn-primary">Details</a>
-                </div>
-            </div>
+<section class="hero">
+    <div class="hero-photo-wrap">
+        <div class="hero-photo">
+            <img src="~/images/profile.jpg" alt="Profile photo" />
         </div>
-    }
-</div>
+    </div>
+    <div class="hero-text">
+        <p class="hero-greeting">Hi I am</p>
+        <h2 class="hero-name">Roque Kevin Clerck</h2>
+        <h1 class="hero-title">IT <span class="hero-accent">Student</span> &amp;<br />Developer</h1>
+        <p class="hero-desc">
+            BSIT student building web apps with ASP.NET Core MVC.
+            Check out the projects I've built so far.
+        </p>
+        <a asp-controller="Home" asp-action="Portfolio" class="btn btn-hire">View Portfolio</a>
+        <div class="hero-socials">
+            <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="#" target="_blank"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://github.com/KevinRoque1" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="#" target="_blank"><i class="bi bi-linkedin"></i></a>
+        </div>
+    </div>
+</section>
